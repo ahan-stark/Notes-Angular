@@ -27,5 +27,8 @@ export class NotesService {
       noteTitle: note.notesTitle
     });
   }
+  public deleteNotes(note:Note): Observable<void>{
+    return this.http.delete<void>(`http://localhost:8080/${note.noteId}`);
+  }
   
 }
