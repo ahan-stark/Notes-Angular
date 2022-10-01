@@ -12,6 +12,7 @@ export class NotesService {
 
   public addNote(note: Note): Observable<void> {
     return this.http.post<void>('http://localhost:8080/addNotes', {
+      noteId: note.noteId,
       noteContent: note.noteContent,
       noteTitle: note.notesTitle
     });
